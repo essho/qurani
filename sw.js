@@ -1,11 +1,11 @@
 const CACHE_NAME = 'qurani-cache-v2';
 
 const PRECACHE_ASSETS = [
-  '/',
-  '/index.html',
-  '/favicon.ico',
-  '/manifest.webmanifest',
-  '/data/quran.json'
+  './',
+  './index.html',
+  './favicon.ico',
+  './manifest.webmanifest',
+  './data/quran.json'
 ];
 
 self.addEventListener('install', (event) => {
