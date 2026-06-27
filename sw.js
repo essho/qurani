@@ -33,6 +33,11 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
 
+  // Only handle http and https schemes (avoid chrome-extension, safari-extension, etc.)
+  if (url.protocol !== 'http:' && url.protocol !== 'https:') {
+    return;
+  }
+
   // Exclude audio files from caching as requested ("عدا الاصوات")
   const isAudio = url.pathname.endsWith('.mp3') || 
                   url.pathname.endsWith('.wav') || 
